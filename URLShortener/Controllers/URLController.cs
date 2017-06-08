@@ -50,8 +50,10 @@ namespace URLShortener.Controllers
             // Show short url
             if (ModelState.IsValid)
             {
+                // change this url to your domain/port
                 url.ShortURL = "http://localhost:3206/Redirect?i=" + id;
             }
+
             return View(url);
         }
     }
