@@ -61,9 +61,9 @@ namespace URLShortener.Controllers
     {
         // Base 64
         public static string ALPHANUMERIC =
-        "0123456789" +
-        "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
-        "abcdefghijklmnopqrstuvwxyz";
+            "0123456789" +
+            "ABCDEFGHIJKLMNOPQRSTUVWXYZ" +
+            "abcdefghijklmnopqrstuvwxyz";
 
         //Remove 0oO1iIl - Base52
         public static string ALPHANUMERIC_ALT =
@@ -88,6 +88,7 @@ namespace URLShortener.Controllers
         }
 
         // Convert to a base smaller than the one provided
+        // This is never used
         public static long FromBase(this string input, string baseChars)
         {
             int srcBase = baseChars.Length;
