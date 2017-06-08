@@ -1,0 +1,26 @@
+﻿@model URLShortener.Models.URL
+@{
+    ViewBag.Title = "Index.cshtml";
+}
+
+<h2 style="text-align:center">Shorten a URL</h2>
+@Html.ValidationSummary()
+
+@using (Html.BeginForm())
+{
+    <div class="form-group" style="text-align:center">
+        @Html.TextBoxFor(model => model.LongURL, new { placeholder = "URL you would like to have shortened", @class = "form-control" })
+    </div>
+
+    if (!string.IsNullOrEmpty(Model.ShortURL))
+    {
+        <div style="text-align:center">
+            <a href="@Model.ShortURL" target="_blank">@Model.ShortURL</a>
+        </div>
+    }
+
+    <div style="text-align:center">
+        <input type="submit" class="btn btn-primary" value="Shorten" />
+    </div>
+
+}
